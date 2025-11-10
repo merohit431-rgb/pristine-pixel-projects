@@ -30,7 +30,7 @@ const Navigation = () => {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container relative grid grid-cols-3 h-16 items-center" >
         <Link to="/" className="flex items-center space-x-2">
           <div className="text-2xl font-bold text-gradient">
             Compliance Globe Next
@@ -38,7 +38,7 @@ const Navigation = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6 absolute left-1/2 transform -translate-x-1/2">
+        <div className="hidden md:flex items-center space-x-6 justify-self-center">
           <Link
             to="/"
             className={`text-sm font-medium transition-colors hover:text-primary ${
@@ -86,7 +86,7 @@ const Navigation = () => {
           </Link>
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden md:block justify-self-end">
           <Link to="/contact">
             <Button className="shadow-elegant">Contact Us</Button>
           </Link>
