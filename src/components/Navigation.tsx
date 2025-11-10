@@ -55,7 +55,7 @@ const Navigation = () => {
                   Services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[280px] gap-2 p-4 bg-background border border-border/40 rounded-lg shadow-lg">
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-background border border-border/40 rounded-lg shadow-lg">
                     {services.map((service) => (
                       <li key={service.path}>
                         <NavigationMenuLink asChild>
