@@ -30,8 +30,8 @@ const Navigation = () => {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
+      <div className="container flex h-16 items-center justify-center">
+        <Link to="/" className="absolute left-4 flex items-center space-x-2">
           <div className="text-2xl font-bold text-gradient">
             Compliance Globe Next
           </div>
@@ -92,7 +92,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="md:hidden">
+          <SheetTrigger asChild className="md:hidden absolute right-4">
             <Button variant="ghost" size="icon">
               <Menu className="h-6 w-6" />
             </Button>
