@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import tanmoyImage from "@/assets/tanmoy.png";
 import avinashImage from "@/assets/avinash.png";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const Founders = () => {
   return (
@@ -9,8 +10,12 @@ const Founders = () => {
       <Navigation />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-          <div className="container">
+        <section className="relative py-16 overflow-hidden">
+          <div className="absolute inset-0">
+            <img src={heroBg} alt="" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/80 to-background/70" />
+          </div>
+          <div className="container relative">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Our <span className="text-gradient">Founders</span>

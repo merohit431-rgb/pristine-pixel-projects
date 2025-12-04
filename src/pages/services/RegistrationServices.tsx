@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Building2, UserCheck, Globe2, FileText, Award, Landmark } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const RegistrationServices = () => {
   const services = [
@@ -91,8 +92,12 @@ const RegistrationServices = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
-        <div className="container">
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroBg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/80 to-background/70" />
+        </div>
+        <div className="container relative">
           <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in">
             <Badge className="mb-4">Business Registration</Badge>
             <h1 className="text-4xl md:text-5xl font-bold">
