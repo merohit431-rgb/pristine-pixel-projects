@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import complianceLogo from "@/assets/compliance-globe-logo.png";
 
 const Footer = () => {
   return (
@@ -8,9 +9,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-gradient">
-              Compliance Globe Next LLP
-            </h3>
+            <Link to="/">
+              <img src={complianceLogo} alt="Compliance Globe Next LLP" className="h-16 w-auto" />
+            </Link>
             <p className="text-sm text-muted-foreground">
               The House of Complete Corporate & Legal Solutions
             </p>

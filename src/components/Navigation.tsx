@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu } from "lucide-react";
+import complianceLogo from "@/assets/compliance-globe-logo.png";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -32,9 +33,7 @@ const Navigation = () => {
     <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container relative grid grid-cols-3 h-16 items-center" >
         <Link to="/" className="flex items-center space-x-2">
-          <div className="text-2xl font-bold text-gradient">
-            Compliance Globe Next
-          </div>
+          <img src={complianceLogo} alt="Compliance Globe Next LLP" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
