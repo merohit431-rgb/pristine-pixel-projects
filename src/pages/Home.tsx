@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import foundersImage from "@/assets/founders-home.jpeg";
 import {
   FileText,
   Building2,
@@ -10,8 +11,9 @@ import {
   Users,
   TrendingUp,
   FileCheck,
-  Briefcase,
   ArrowRight,
+  Target,
+  Eye,
 } from "lucide-react";
 
 const Home = () => {
@@ -52,12 +54,6 @@ const Home = () => {
       description: "Claim support, documentation, and dispute resolution",
       path: "/services/insurance",
     },
-    {
-      icon: Briefcase,
-      title: "Additional Support",
-      description: "Virtual office, accounting, payroll, and business services",
-      path: "/services/additional",
-    },
   ];
 
   return (
@@ -94,8 +90,91 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Why Choose Us */}
       <section className="py-20 bg-muted/30">
+        <div className="container">
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold">Why Choose Compliance Globe Next?</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Compliance Globe Next LLP is led by two dynamic professionals who bring complementary strengths across Corporate Law, Insolvency, Finance, and Regulatory Compliance — ensuring the firm delivers excellent, future-ready solutions to its clients.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Founders Image */}
+            <div className="relative rounded-xl overflow-hidden shadow-elegant animate-fade-in">
+              <img 
+                src={foundersImage} 
+                alt="Our Founders - Tanmoy Ghosh and Avinash Prabhat" 
+                className="w-full h-auto object-cover"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="space-y-6">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold">About Us</h3>
+                <p className="text-muted-foreground">
+                  We are a leading professional services firm specializing in corporate compliance, legal advisory, and business solutions. Our team combines extensive experience with innovative approaches to deliver comprehensive services that help businesses thrive in today's complex regulatory environment.
+                </p>
+              </div>
+
+              <div className="space-y-4 pt-4">
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Shield className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Expert Team</h4>
+                    <p className="text-muted-foreground text-sm">
+                      Highly qualified professionals with deep regulatory expertise across Corporate Law, Insolvency & Finance
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <FileCheck className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Complete Solutions</h4>
+                    <p className="text-muted-foreground text-sm">
+                      End-to-end services covering your entire business lifecycle from incorporation to compliance
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <TrendingUp className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Proven Track Record</h4>
+                    <p className="text-muted-foreground text-sm">
+                      Trusted by businesses across industries for reliable compliance and advisory services
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex gap-4 pt-4">
+                <Link to="/about">
+                  <Button className="shadow-elegant">
+                    Learn More About Us
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link to="/founders">
+                  <Button variant="outline">
+                    Meet Our Founders
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-20">
         <div className="container">
           <div className="text-center mb-12 space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold">Our Services</h2>
@@ -134,64 +213,51 @@ const Home = () => {
               );
             })}
           </div>
+
+          <div className="text-center mt-10">
+            <Link to="/services/additional">
+              <Button size="lg" variant="outline" className="shadow-sm">
+                View All Services
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20">
+      {/* Vision & Mission */}
+      <section className="py-20 bg-muted/30">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold">
-                Why Choose Compliance Globe Next?
-              </h2>
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Shield className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Expert Team</h3>
-                    <p className="text-muted-foreground">
-                      Highly qualified professionals with deep regulatory expertise
-                    </p>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Vision */}
+            <Card className="border-none shadow-elegant hover-lift">
+              <CardHeader className="space-y-4">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Eye className="h-7 w-7 text-primary" />
                 </div>
-                <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <FileCheck className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Complete Solutions</h3>
-                    <p className="text-muted-foreground">
-                      End-to-end services covering your entire business lifecycle
-                    </p>
-                  </div>
+                <CardTitle className="text-2xl">Our Vision</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">
+                  To be the most trusted and innovative compliance partner, empowering businesses to achieve sustainable growth through seamless regulatory adherence and strategic advisory services. We envision a business landscape where compliance is not a burden but a competitive advantage.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Mission */}
+            <Card className="border-none shadow-elegant hover-lift">
+              <CardHeader className="space-y-4">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Target className="h-7 w-7 text-primary" />
                 </div>
-                <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <TrendingUp className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Proven Track Record</h3>
-                    <p className="text-muted-foreground">
-                      Trusted by businesses across industries for reliable compliance
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <Link to="/about">
-                <Button className="shadow-elegant">
-                  Learn More About Us
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-            <div className="relative h-[400px] rounded-lg overflow-hidden shadow-elegant">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                <Building2 className="h-32 w-32 text-primary/20" />
-              </div>
-            </div>
+                <CardTitle className="text-2xl">Our Mission</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">
+                  To deliver exceptional corporate compliance and legal solutions with integrity, expertise, and client-centric approach. We are committed to simplifying complex regulatory requirements and enabling businesses to focus on their core operations while we handle their compliance needs.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
