@@ -29,6 +29,11 @@ const Navigation = () => {
     { title: "Additional Support", path: "/services/additional" },
   ];
 
+  const aboutLinks = [
+    { title: "About Us", path: "/about" },
+    { title: "Our Founders", path: "/about/founders" },
+  ];
+
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container relative grid grid-cols-3 h-16 items-center" >
@@ -75,14 +80,33 @@ const Navigation = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <Link
-            to="/about"
-            className={`text-sm font-medium transition-colors hover:text-primary ${
-              isActive("/about") ? "text-primary" : "text-foreground"
-            }`}
-          >
-            About
-          </Link>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm font-medium">
+                  About
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[200px] gap-2 p-4 bg-background border border-border/40 rounded-lg shadow-lg">
+                    {aboutLinks.map((link) => (
+                      <li key={link.path}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to={link.path}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          >
+                            <div className="text-sm font-medium leading-none">
+                              {link.title}
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
 
         <div className="hidden md:block justify-self-end">
@@ -122,13 +146,21 @@ const Navigation = () => {
                   ))}
                 </div>
               </div>
-              <Link
-                to="/about"
-                onClick={() => setIsOpen(false)}
-                className="text-lg font-medium transition-colors hover:text-primary"
-              >
-                About
-              </Link>
+              <div className="space-y-2">
+                <div className="text-lg font-medium">About</div>
+                <div className="ml-4 space-y-2">
+                  {aboutLinks.map((link) => (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      onClick={() => setIsOpen(false)}
+                      className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {link.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
               <Link to="/contact" onClick={() => setIsOpen(false)}>
                 <Button className="w-full shadow-elegant">Contact Us</Button>
               </Link>
