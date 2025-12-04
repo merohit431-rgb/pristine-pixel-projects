@@ -15,15 +15,6 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               Compliance Globe Next LLP is a professional consulting and legal management firm providing end-to-end corporate, regulatory, and financial compliance solutions to businesses across India. We combine deep regulatory expertise with modern business insights to simplify compliance and empower growth.
             </p>
-            <div className="space-y-2 text-sm">
-              <div className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-1 text-primary flex-shrink-0" />
-                <p className="text-muted-foreground">
-                  2583 and 2604-2605, Pvt No. 5, Third Floor, Gali No. 5,
-                  Beadonpura, Karol Bagh, New Delhi - 110005
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* Quick Links */}
