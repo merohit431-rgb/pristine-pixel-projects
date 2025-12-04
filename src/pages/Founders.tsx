@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import foundersImage from "@/assets/founders.jpg";
 
 const Founders = () => {
   return (
@@ -21,18 +20,6 @@ const Founders = () => {
           </div>
         </section>
 
-        {/* Founders Image */}
-        <section className="py-12">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <img 
-                src={foundersImage} 
-                alt="Tanmoy Ghosh and Avinash Prabhat - Founders of Compliance Globe Next LLP" 
-                className="w-full rounded-2xl shadow-elegant"
-              />
-            </div>
-          </div>
-        </section>
 
         {/* Tanmoy Profile */}
         <section className="py-16 bg-muted/30">
