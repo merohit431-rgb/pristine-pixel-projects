@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <Link to="/">
-              <img src={complianceLogo} alt="Compliance Globe Next LLP" className="h-16 w-auto" />
+              <img src={complianceLogo} alt="Compliance Globe Next LLP" className="h-24 w-auto" />
             </Link>
             <p className="text-sm text-muted-foreground">
               The House of Complete Corporate & Legal Solutions
