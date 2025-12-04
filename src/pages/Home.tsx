@@ -102,11 +102,11 @@ const Home = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Founders Image */}
-            <div className="relative rounded-xl overflow-hidden shadow-elegant animate-fade-in">
+            <div className="relative rounded-xl overflow-hidden shadow-elegant animate-fade-in hover-scale max-h-[400px]">
               <img 
                 src={foundersImage} 
                 alt="Our Founders - Tanmoy Ghosh and Avinash Prabhat" 
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
 
@@ -230,12 +230,12 @@ const Home = () => {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Vision */}
-            <Card className="border-none shadow-elegant hover-lift">
+            <Card className="border-none shadow-elegant hover-lift animate-fade-in group" style={{ animationDelay: '100ms' }}>
               <CardHeader className="space-y-4">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Eye className="h-7 w-7 text-primary" />
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                  <Eye className="h-7 w-7 text-primary group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <CardTitle className="text-2xl">Our Vision</CardTitle>
+                <CardTitle className="text-2xl group-hover:text-primary transition-colors duration-300">Our Vision</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
@@ -245,12 +245,12 @@ const Home = () => {
             </Card>
 
             {/* Mission */}
-            <Card className="border-none shadow-elegant hover-lift">
+            <Card className="border-none shadow-elegant hover-lift animate-fade-in group" style={{ animationDelay: '200ms' }}>
               <CardHeader className="space-y-4">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Target className="h-7 w-7 text-primary" />
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                  <Target className="h-7 w-7 text-primary group-hover:scale-110 transition-transform duration-300" />
                 </div>
-                <CardTitle className="text-2xl">Our Mission</CardTitle>
+                <CardTitle className="text-2xl group-hover:text-primary transition-colors duration-300">Our Mission</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
