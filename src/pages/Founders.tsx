@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import tanmoyImage from "@/assets/tanmoy.png";
 
 const Founders = () => {
   return (
@@ -26,12 +27,19 @@ const Founders = () => {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <div className="bg-background rounded-2xl p-8 md:p-12 shadow-elegant border border-border/40">
-                <div className="mb-6">
-                  <h2 className="text-3xl font-bold text-gradient mb-2">Tanmoy Ghosh</h2>
+                <div className="flex flex-col md:flex-row gap-8 mb-6">
+                  <img 
+                    src={tanmoyImage} 
+                    alt="Tanmoy Ghosh - Co-Founder of Compliance Globe Next LLP"
+                    className="w-48 h-48 rounded-xl object-cover object-top shadow-lg flex-shrink-0 mx-auto md:mx-0"
+                  />
+                  <div>
+                    <h2 className="text-3xl font-bold text-gradient mb-2">Tanmoy Ghosh</h2>
                   <p className="text-xl text-primary font-medium">Co-Founder & Partner</p>
-                  <p className="text-muted-foreground mt-2">
-                    Company Secretary | LL.B. | PGDBA (Finance)
-                  </p>
+                    <p className="text-muted-foreground mt-2">
+                      Company Secretary | LL.B. | PGDBA (Finance)
+                    </p>
+                  </div>
                 </div>
                 
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
