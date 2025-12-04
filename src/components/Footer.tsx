@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
-import complianceLogo from "@/assets/compliance-globe-logo.png";
+import complianceLogo from "@/assets/final-logo.jpeg";
 
 const Footer = () => {
   return (
