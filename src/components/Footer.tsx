@@ -48,6 +48,14 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/about/founders"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Our Founders
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/contact"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -100,6 +108,12 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Contact Us</h3>
             <ul className="space-y-3 text-sm">
+              <li className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                <span className="text-muted-foreground">
+                  2583 and 2604-2605, Pvt No. 5, Third Floor, Gali No. 5, Beadonpura, Karol Bagh, New Delhi - 110005
+                </span>
+              </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
                 <a
