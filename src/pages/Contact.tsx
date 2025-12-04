@@ -8,10 +8,13 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 import heroBg from "@/assets/hero-bg.jpg";
 
-// Web3Forms Access Key - Get yours free at https://web3forms.com
-const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY";
+// EmailJS Configuration
+const EMAILJS_SERVICE_ID = "service_brdv2vy";
+const EMAILJS_TEMPLATE_ID = "template_zet50ej";
+const EMAILJS_PUBLIC_KEY = "3pLznq9xbkbziPZ9H";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -28,34 +31,26 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          name: formData.name,
-          email: formData.email,
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
           phone: formData.phone,
           message: formData.message,
-          subject: `New Contact Form Submission from ${formData.name}`,
-        }),
+          to_email: "info.complianceglobe@gmail.com",
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      toast({
+        title: "Message Sent!",
+        description: "We'll get back to you as soon as possible.",
       });
-
-      const result = await response.json();
-
-      if (result.success) {
-        toast({
-          title: "Message Sent!",
-          description: "We'll get back to you as soon as possible.",
-        });
-        setFormData({ name: "", email: "", phone: "", message: "" });
-      } else {
-        throw new Error(result.message);
-      }
+      setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
-      console.error("Web3Forms error:", error);
+      console.error("EmailJS error:", error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",
