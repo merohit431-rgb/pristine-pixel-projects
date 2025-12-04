@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import complianceLogo from "@/assets/compliance-globe-logo.png";
+import complianceLogo from "@/assets/final-logo.jpeg";
 import {
   NavigationMenu,
   NavigationMenuContent,
