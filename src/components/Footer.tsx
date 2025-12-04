@@ -92,6 +92,30 @@ const Footer = () => {
                   Consulting & Advisory
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/services/npa"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  NPA & Financial Recovery
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/insurance"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Insurance Claims
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services/additional"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Additional Support
+                </Link>
+              </li>
             </ul>
           </div>
 
