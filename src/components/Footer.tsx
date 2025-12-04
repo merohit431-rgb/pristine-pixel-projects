@@ -13,7 +13,7 @@ const Footer = () => {
               <img src={complianceLogo} alt="Compliance Globe Next LLP" className="h-24 w-auto" />
             </Link>
             <p className="text-sm text-muted-foreground">
-              The House of Complete Corporate & Legal Solutions
+              Compliance Globe Next LLP is a professional consulting and legal management firm providing end-to-end corporate, regulatory, and financial compliance solutions to businesses across India. We combine deep regulatory expertise with modern business insights to simplify compliance and empower growth.
             </p>
             <div className="space-y-2 text-sm">
               <div className="flex items-start gap-2">
