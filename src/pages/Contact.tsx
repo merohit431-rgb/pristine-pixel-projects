@@ -113,6 +113,20 @@ const Contact = () => {
                 </CardContent>
               </Card>
             </div>
+
+            {/* Google Map */}
+            <div className="rounded-lg overflow-hidden shadow-elegant h-[450px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.5!2d77.1903!3d28.6519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d029c1c3aaaab%3A0x7c0c2b5e5e5e5e5e!2sBeadonpura%2C%20Karol%20Bagh%2C%20New%20Delhi%2C%20Delhi%20110005!5e0!3m2!1sen!2sin!4v1700000000000"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Office Location - Karol Bagh, New Delhi"
+              />
+            </div>
           </div>
         </div>
       </section>
