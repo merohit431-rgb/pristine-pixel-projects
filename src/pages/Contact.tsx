@@ -1,75 +1,10 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Loader2 } from "lucide-react";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
-import emailjs from "@emailjs/browser";
+import { Card, CardContent } from "@/components/ui/card";
+import { Mail, Phone, MapPin } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
-// EmailJS Configuration
-const EMAILJS_SERVICE_ID = "service_brdv2vy";
-const EMAILJS_TEMPLATE_ID = "template_zet50ej";
-const EMAILJS_PUBLIC_KEY = "3pLznq9xbkbziPZ9H";
-
 const Contact = () => {
-  const { toast } = useToast();
-  const [isLoading, setIsLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-          to_email: "info.complianceglobe@gmail.com",
-        },
-        EMAILJS_PUBLIC_KEY
-      );
-
-      toast({
-        title: "Message Sent!",
-        description: "We'll get back to you as soon as possible.",
-      });
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
-      console.error("EmailJS error:", error);
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -93,79 +28,23 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form & Info */}
+      {/* Map & Contact Info */}
       <section className="py-20">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <Card className="shadow-elegant">
-              <CardHeader>
-                <CardTitle>Send us a Message</CardTitle>
-                <CardDescription>
-                  Fill out the form below and we'll get back to you shortly.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Full Name</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Your name"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="your.email@example.com"
-                      required
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+91 XXXXX XXXXX"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="How can we help you?"
-                      className="min-h-[150px]"
-                      required
-                    />
-                  </div>
-                  <Button type="submit" className="w-full shadow-elegant" disabled={isLoading}>
-                    {isLoading ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      "Send Message"
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            {/* Google Map */}
+            <div className="rounded-lg overflow-hidden shadow-elegant h-[450px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.5!2d77.1903!3d28.6519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d029c1c3aaaab%3A0x7c0c2b5e5e5e5e5e!2sBeadonpura%2C%20Karol%20Bagh%2C%20New%20Delhi%2C%20Delhi%20110005!5e0!3m2!1sen!2sin!4v1700000000000"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Office Location - Karol Bagh, New Delhi"
+              />
+            </div>
 
             {/* Contact Information */}
             <div className="space-y-6">
@@ -178,18 +57,12 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-2">Phone</h3>
                       <p className="text-muted-foreground mb-1">
-                        <a
-                          href="tel:+919560293324"
-                          className="hover:text-primary transition-colors"
-                        >
+                        <a href="tel:+919560293324" className="hover:text-primary transition-colors">
                           +91-9560293324
                         </a>
                       </p>
                       <p className="text-muted-foreground">
-                        <a
-                          href="tel:+919999648031"
-                          className="hover:text-primary transition-colors"
-                        >
+                        <a href="tel:+919999648031" className="hover:text-primary transition-colors">
                           +91-9999648031
                         </a>
                       </p>
@@ -207,18 +80,12 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-2">Email</h3>
                       <p className="text-muted-foreground mb-1">
-                        <a
-                          href="mailto:info@icompliance.in"
-                          className="hover:text-primary transition-colors"
-                        >
+                        <a href="mailto:info@icompliance.in" className="hover:text-primary transition-colors">
                           info@icompliance.in
                         </a>
                       </p>
                       <p className="text-muted-foreground">
-                        <a
-                          href="mailto:info.complianceglobe@gmail.com"
-                          className="hover:text-primary transition-colors"
-                        >
+                        <a href="mailto:info.complianceglobe@gmail.com" className="hover:text-primary transition-colors">
                           info.complianceglobe@gmail.com
                         </a>
                       </p>
